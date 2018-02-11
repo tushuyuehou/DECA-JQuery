@@ -1,0 +1,67 @@
+body {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    font: 14px/1.5 "Segoe UI","Lucida Grande",Helvetica,Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei","Hiragino Sans GB","Hiragino Sans GB W3",Roboto,Arial,sans-serif;
+    color: #323232;
+    word-wrap: break-word;
+}
+li, ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a{
+    color: #323232;
+    transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+}
+a:focus {
+    color:#323232;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+    color: #f39c12;
+}
+button{
+    outline: none;
+    border:none;
+    box-shadow: none;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-family: "Lucida Grande",Helvetica,Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei","Hiragino Sans GB","Hiragino Sans GB W3",Roboto,Arial,sans-serif;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    text-shadow: rgba(0,0,0,.15) 0 0 1px;
+}
+.glyphicon{
+    top:0;
+}
+.margin-top-5 {
+    margin-top: 5px!important;
+}
+.margin-bottom-0 {
+    margin-bottom: 0!important;
+}
+.margin-top-10 {
+    margin-top: 10px!important;
+}
+.margin-top-15 {
+    margin-top: 15px!important;
+}
+.margin-top-30 {
+    margin-top: 30px!important;
+}
+.width-150 {
+    width: 150px;
+}
+.pager li > a:hover, .pager li > a:focus {
+    text-decoration: none;
+    background-color: #fff;
+}
+.btn:hover, .btn:focus, .btn.focus{
+    outline: none;
+}
