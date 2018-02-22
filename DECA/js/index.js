@@ -257,44 +257,162 @@ $(()=>{
         $(videoDiv).remove();
     });
 
+    /******登陆注册*******/
+    /****登陆****/
+    var loginDiv = $('<div class="login-layerbox-overlay"></div>\n' +
+        '        <div class="wrapper">\n' +
+        '            <div class="card">\n' +
+        '                <div class="card__year">\n' +
+        '                    <div class="login-container">\n' +
+        '                        <button class="brand-close">×</button>\n' +
+        '                        <div class="brand">\n' +
+        '                            <img class="brand-img" src="images/1490844982.png" alt="DECA">\n' +
+        '                            <h2 class="brand-text">会员登录</h2>\n' +
+        '                        </div>\n' +
+        '                        <form action="#" class="login-layer">\n' +
+        '                            <div class="login-content">\n' +
+        '                                <div class="form-group">\n' +
+        '                                    <input type="text" placeholder="用户名" name="uname" id="uname">\n' +
+        '                                </div>\n' +
+        '                                <div class="form-group">\n' +
+        '                                    <input type="password" placeholder="密码" name="upwd" id="upwd">\n' +
+        '                                </div>\n' +
+        '                                <button type="button" class="login-btn">登录</button>\n' +
+        '                                <div class="form-other">\n' +
+        '                                    <a href="javascript:;">立即注册</a> / <a href="javascript:;">忘记密码？</a>\n' +
+        '                                </div>\n' +
+        '                            </div>\n' +
+        '                        </form>\n' +
+        '                    </div>\n' +
+        '                </div>\n' +
+        '            </div>\n' +
+        '        </div>');
 
-    /**********3D-login****************/
-    $(()=>{
-      var _year = document.querySelector('.card__year');
-      var _card = document.querySelector('.card');
+    $('#login').click(function(){
+        $(loginDiv).appendTo($('.shoplayer'));
+        $('body').css({'overflow':'hidden'});
 
-      var generateTranslate = function generateTranslate(el, e, value) {
-        el.style.transform = 'translate(' + e.clientX * value + 'px, ' + e.clientY * value + 'px)';
-      };
+        /**********3D-login****************/
+        var _year = document.querySelector('.card__year');
+        var _card = document.querySelector('.card');
 
-      var cumulativeOffset = function cumulativeOffset(element) {
-        var top = 0,
-          left = 0;
-        do {
-          top += element.offsetTop || 0;
-          left += element.offsetLeft || 0;
-          element = element.offsetParent;
-        } while (element);
-
-        return {
-          top: top,
-          left: left
+        var generateTranslate = function generateTranslate(el, e, value) {
+            el.style.transform = 'translate(' + e.clientX * value + 'px, ' + e.clientY * value + 'px)';
         };
-      };
-      document.onmousemove = function (event) {
-        //console.log(cumulativeOffset(_card));
-        var e = event || window.event;
-        var x = (e.pageX - cumulativeOffset(_card).left - 350 / 2) * -1 / 100;
-        var y = (e.pageY - cumulativeOffset(_card).top - 350 / 2) * -1 / 100;
 
-        var matrix = [[1, 0, 0, -x * 0.00005], [0, 1, 0, -y * 0.00005], [0, 0, 1, 1], [0, 0, 0, 1]];
+        var cumulativeOffset = function cumulativeOffset(element) {
+            var top = 0,
+                left = 0;
+            do {
+                top += element.offsetTop || 0;
+                left += element.offsetLeft || 0;
+                element = element.offsetParent;
+            } while (element);
 
-        generateTranslate(_year, e, 0.01);
+            return {
+                top: top,
+                left: left
+            };
+        };
+        document.onmousemove = function (event) {
+            //console.log(cumulativeOffset(_card));
+            var e = event || window.event;
+            var x = (e.clientX - cumulativeOffset(_card).left - 350 / 2) * -1 / 100;
+            var y = (e.clientY - cumulativeOffset(_card).top - 350 / 2) * -1 / 100;
 
-        _card.style.transform = 'matrix3d(' + matrix.toString() + ')';
-      };
+            var matrix = [[1, 0, 0, -x * 0.00005], [0, 1, 0, -y * 0.00005], [0, 0, 1, 1], [0, 0, 0, 1]];
 
+            generateTranslate(_year, e, 0.01);
 
+            _card.style.transform = 'matrix3d(' + matrix.toString() + ')';
+        };
+
+    })
+
+    /******按钮关闭登陆*******/
+    $('.shoplayer').on('click','.brand-close',function(){
+        $(loginDiv).remove();
+        $('body').css({'overflow':'visible'});
+    })
+
+    /****注册******/
+    var registerDiv = $('<div class="login-layerbox-overlay"></div>\n' +
+        '        <div class="wrapper">\n' +
+        '            <div class="card">\n' +
+        '                <div class="card__year">\n' +
+        '                    <div class="login-container">\n' +
+        '                        <button class="brand-close">×</button>\n' +
+        '                        <div class="brand">\n' +
+        '                            <img class="brand-img" src="images/1490844982.png" alt="DECA">\n' +
+        '                            <h2 class="brand-text">会员注册</h2>\n' +
+        '                        </div>\n' +
+        '                        <form action="#" class="register-layer">\n' +
+        '                            <div class="register-content">\n' +
+        '                                <div class="form-group">\n' +
+        '                                    <input type="text" placeholder="请输入用户名" name="uname1" id="uname1">\n' +
+        '                                </div>\n' +
+        '                                <div class="form-group">\n' +
+        '                                    <input type="password" placeholder="请输入密码" name="upwd1" id="upwd1">\n' +
+        '                                </div>\n' +
+        '                                <div class="form-group">\n' +
+        '                                    <input type="password" placeholder="请再次输入密码" name="upwd2" id="upwd2">\n' +
+        '                                </div>\n' +
+        '                                <button type="button" class="login-btn">注册</button>\n' +
+        '                                <div class="form-other">\n' +
+        '                                    <a href="javascript:;">已有账号？马上登陆</a>\n' +
+        '                                </div>\n' +
+        '                            </div>\n' +
+        '                        </form>\n' +
+        '                    </div>\n' +
+        '                </div>\n' +
+        '            </div>\n' +
+        '        </div>')
+
+    $('#register').click(function(){
+        $(registerDiv).appendTo($('.register-shoplayer'));
+        $('body').css({'overflow':'hidden'});
+
+        /**********3D-login****************/
+        var _year = document.querySelector('.card__year');
+        var _card = document.querySelector('.card');
+
+        var generateTranslate = function generateTranslate(el, e, value) {
+            el.style.transform = 'translate(' + e.clientX * value + 'px, ' + e.clientY * value + 'px)';
+        };
+
+        var cumulativeOffset = function cumulativeOffset(element) {
+            var top = 0,
+                left = 0;
+            do {
+                top += element.offsetTop || 0;
+                left += element.offsetLeft || 0;
+                element = element.offsetParent;
+            } while (element);
+
+            return {
+                top: top,
+                left: left
+            };
+        };
+        document.onmousemove = function (event) {
+            //console.log(cumulativeOffset(_card));
+            var e = event || window.event;
+            var x = (e.clientX - cumulativeOffset(_card).left - 350 / 2) * -1 / 100;
+            var y = (e.clientY - cumulativeOffset(_card).top - 350 / 2) * -1 / 100;
+
+            var matrix = [[1, 0, 0, -x * 0.00005], [0, 1, 0, -y * 0.00005], [0, 0, 1, 1], [0, 0, 0, 1]];
+
+            generateTranslate(_year, e, 0.01);
+
+            _card.style.transform = 'matrix3d(' + matrix.toString() + ')';
+        };
+
+    })
+
+    /******按钮关闭登陆*******/
+    $('.register-shoplayer').on('click','.brand-close',function(){
+        $(registerDiv).remove();
+        $('body').css({'overflow':'visible'});
     })
     /*******about.js*******************/
 })
