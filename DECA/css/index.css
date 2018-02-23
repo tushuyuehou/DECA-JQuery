@@ -574,24 +574,24 @@
     position: relative;
     transition: all 0.3s;
 }
-.rev_slider_wrapper {
-    width: 100%;
-    position: relative;
-    z-index: 0;
+.carousel-control.right{
+    background-image: none;
+    right: -5%;
 }
-.rev_slider {
-    position: relative;
-    overflow: visible;
+.carousel-control.left{
+    background-image: none;
+    left: -5%;
 }
-.tp-overflow-hidden {
-    overflow: hidden;
+.carousel-indicators{
+    bottom: 0;
 }
-
-
 @media (min-width: 768px){
      .main-slider {
         margin-right: 60px!important;
         margin-left: 60px!important;
+    }
+    .carousel-indicators {
+         bottom: 0;
     }
 }
 /**nav动画**/

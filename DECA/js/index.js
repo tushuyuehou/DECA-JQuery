@@ -279,7 +279,7 @@ $(()=>{
         '                                </div>\n' +
         '                                <button type="button" class="login-btn">登录</button>\n' +
         '                                <div class="form-other">\n' +
-        '                                    <a href="javascript:;">立即注册</a> / <a href="javascript:;">忘记密码？</a>\n' +
+        '                                    <a href="javascript:;" class="is-login">立即注册</a> / <a href="javascript:;">忘记密码？</a>\n' +
         '                                </div>\n' +
         '                            </div>\n' +
         '                        </form>\n' +
@@ -288,7 +288,7 @@ $(()=>{
         '            </div>\n' +
         '        </div>');
 
-    $('#login').click(function(){
+    var loginFunc = function(){
         $(loginDiv).appendTo($('.shoplayer'));
         $('body').css({'overflow':'hidden'});
 
@@ -327,7 +327,8 @@ $(()=>{
             _card.style.transform = 'matrix3d(' + matrix.toString() + ')';
         };
 
-    })
+    }
+    $('#login').click(loginFunc);
 
     /******按钮关闭登陆*******/
     $('.shoplayer').on('click','.brand-close',function(){
@@ -359,7 +360,7 @@ $(()=>{
         '                                </div>\n' +
         '                                <button type="button" class="login-btn">注册</button>\n' +
         '                                <div class="form-other">\n' +
-        '                                    <a href="javascript:;">已有账号？马上登陆</a>\n' +
+        '                                    <a href="javascript:;" class="is-register">已有账号？马上登陆</a>\n' +
         '                                </div>\n' +
         '                            </div>\n' +
         '                        </form>\n' +
@@ -368,7 +369,7 @@ $(()=>{
         '            </div>\n' +
         '        </div>')
 
-    $('#register').click(function(){
+    var registerFunc = function(){
         $(registerDiv).appendTo($('.register-shoplayer'));
         $('body').css({'overflow':'hidden'});
 
@@ -407,12 +408,26 @@ $(()=>{
             _card.style.transform = 'matrix3d(' + matrix.toString() + ')';
         };
 
-    })
+    }
 
-    /******按钮关闭登陆*******/
+    $('#register').click(registerFunc);
+
+    /******按钮关闭注册*******/
     $('.register-shoplayer').on('click','.brand-close',function(){
         $(registerDiv).remove();
         $('body').css({'overflow':'visible'});
     })
+
+    /****登陆注册切换****/
+    $('.shoplayer').on('click','.is-login',function(){
+        $(loginDiv).remove();
+        registerFunc();
+    })
+
+    $('.register-shoplayer').on('click','.is-register',function(){
+        $(registerDiv).remove();
+        loginFunc();
+    })
+
     /*******about.js*******************/
 })

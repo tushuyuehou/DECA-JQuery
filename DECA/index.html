@@ -208,17 +208,32 @@
     </div>
     <!--2.banner-->
     <div class="main-slider">
-        <div class="rev_slider_wrapper">
-            <div class="tp-banner rev_slider tp-overflow-hidden">
-                <ul>
-                    <li>
-                        <img src="images/index/1493169888.jpg" width="100%">
-                    </li>
-                    <li>
-                        <img src="" alt="">
-                    </li>
-                </ul>
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="images/index/1493169888.jpg" alt="轮播图1">
+                </div>
+                <div class="item">
+                    <img src="images/index/1493170128.jpg" alt="轮播图2">
+                </div>
             </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left glyphicon-menu-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right glyphicon-menu-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
     </div>
     <!--3.产品展示-->
@@ -767,54 +782,14 @@
         <i class="icon glyphicon glyphicon-menu-up"></i>
     </button>
     <!--11.全屏播放视频-->
-    <!--<div class="mfp-wrap mfp-close-btn-in mfp-auto-cursor mfp-ready">-->
-        <!--<div class="mfp-container mfp-s-ready mfp-iframe-holder">-->
-            <!--<div class="mfp-content">-->
-                <!--<div class="mfp-iframe-scaler">-->
-                    <!--<button title="关闭" type="button" class="mfp-close">×</button>-->
-                    <!--<video class="mfp-iframe" src="images/index/123456.mp4" controls></video>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
+    <div class="video_hidden"></div>
     <!--12.登录-->
     <div class="shoplayer"></div>
-    <div class="register-shoplayer">
-        <!--<div class="login-layerbox-overlay"></div>-->
-        <!--<div class="wrapper">-->
-            <!--<div class="card">-->
-                <!--<div class="card__year">-->
-                    <!--<div class="login-container">-->
-                        <!--<button class="brand-close">×</button>-->
-                        <!--<div class="brand">-->
-                            <!--<img class="brand-img" src="images/1490844982.png" alt="DECA">-->
-                            <!--<h2 class="brand-text">会员注册</h2>-->
-                        <!--</div>-->
-                        <!--<form action="#" class="register-layer">-->
-                            <!--<div class="register-content">-->
-                                <!--<div class="form-group">-->
-                                    <!--<input type="text" placeholder="请输入用户名" name="uname1" id="uname1">-->
-                                <!--</div>-->
-                                <!--<div class="form-group">-->
-                                    <!--<input type="password" placeholder="请输入密码" name="upwd1" id="upwd1">-->
-                                <!--</div>-->
-                                <!--<div class="form-group">-->
-                                    <!--<input type="password" placeholder="请再次输入密码" name="upwd2" id="upwd2">-->
-                                <!--</div>-->
-                                <!--<button type="button" class="login-btn">注册</button>-->
-                                <!--<div class="form-other">-->
-                                    <!--<a href="javascript:;">已有账号？马上登陆</a>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</form>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    </div>
+    <!--13.注册-->
+    <div class="register-shoplayer"></div>
 
-    <div class="video_hidden"></div>
     <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/index.js"></script>
 </body>
 </html>

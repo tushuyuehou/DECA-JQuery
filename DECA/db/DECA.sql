@@ -34,16 +34,15 @@ CREATE TABLE DECA_user(
 	upwd varchar(32) default NULL,
 	email varchar(64) default NULL,
 	phone varchar(16) default NULL,
-	avatar varchar(128) default NULL,
-	user_name varchar(32) default NULL,
 	gender int(11) default NULL,
+	avatar varchar(128) default 'default.png',
 	PRIMARY KEY (uid)
 );
 
-INSERT INTO DECA_user VALUES ('1', 'dingding', '123456', 'ding@qq.com', '13511011000', 'img/avatar/default.png', '丁春秋', '0');
-INSERT INTO DECA_user VALUES ('2', 'dangdang', '123456', 'dang@qq.com', '13501234568', 'img/avatar/default.png', '当当喵', '1');
-INSERT INTO DECA_user VALUES ('3', 'doudou', '123456', 'dou@qq.com', '13501234569', 'img/avatar/default.png', '窦志强', '1');
-INSERT INTO DECA_user VALUES ('4', 'yaya', '123456', 'ya@qq.com', '13501234560', 'img/avatar/default.png', '秦小雅', '0');
+INSERT INTO DECA_user VALUES ('1', 'dingding', '123456', 'ding@qq.com', '13511011000', '0','default.png');
+INSERT INTO DECA_user VALUES ('2', 'dangdang', '123456', 'dang@qq.com', '13501234568', '1','default.png');
+INSERT INTO DECA_user VALUES ('3', 'doudou', '123456', 'dou@qq.com', '13501234569', '1','default.png');
+INSERT INTO DECA_user VALUES ('4', 'yaya', '123456', 'ya@qq.com', '13501234560', '0','default.png');
 
 
 -- ----------------------------
@@ -62,6 +61,7 @@ CREATE TABLE `DECA_laptop` (
   `shelf_time` bigint(20) default NULL,
   `sold_count` int(11) default NULL,
   `is_onsale` tinyint(1) default NULL,
+  `lg` varchar(128) default NULL,	
   PRIMARY KEY  (`lid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
 
@@ -69,14 +69,14 @@ CREATE TABLE `DECA_laptop` (
 -- ----------------------------
 -- Records of DECA_laptop
 -- ----------------------------
-INSERT INTO `DECA_laptop` VALUES ('1', '1', '17/SS灯具设计新品', '圆形玻璃灯','产品信息：玻璃灯工以玻璃管为基材，在专用的喷灯火焰上进行局部加热后，利用其热塑性和热熔性进行弯、吹、按、焊等加工成型的技术。是玻璃仪器和玻璃制品如玻璃温度计、保温瓶、灯泡、注射器、安瓿、管制瓶、电真空器件等生产中二次热加工的成型手段。', '169.00', '原色', '150123456789','694','1');
-INSERT INTO `DECA_laptop` VALUES ('2', '2', '17/SS桌椅新品设计', 'Tapani table','产品信息：桌子是一种常用家具，上有平面，下有支柱。可以在上面放东西、做事情、吃饭、写字、工作等。有光滑平板，由腿和其它支撑物固定起来的家具，在语文中亦可作名词。为了迎合大众需求，桌子的类型丰富多样。桌子按需求可以分为很多类别，比如办公桌、餐桌、课桌、电脑桌、讲桌等。', '399.00', '原色', '150123456789','242','1');
-INSERT INTO `DECA_laptop` VALUES ('3', '2', '17/SS桌椅新品设计', 'Stakk小方椅','产品信息：椅子是一种有靠背、有的还有扶手的坐具。古代席地而坐，原没有椅子，“椅”本是木名。《诗经》有“其桐其椅”，“椅”即“梓”，是一种树木的名称。', '99.00', '原色', '150123456789','252','1');
-INSERT INTO `DECA_laptop` VALUES ('4', '1', '17/SS灯具设计新品', 'Pendant lamp','产品信息：吊灯无论是以电线或以铁支垂吊，都不能吊得太矮，阻碍人正常的视线或令人觉得刺眼。以饭厅的吊灯为例，理想的高度是要在饭桌上形成一池灯光，但又不会阻碍桌上众人互望的视线。现时吊灯吊支已装上弹簧或高度调节器，可适合不同高度的楼底和需要性。', '69.00', '原色', '150123456789','256','1');
-INSERT INTO `DECA_laptop` VALUES ('5', '3', '16/FW全系家居展示', '木制菜碟小套件','产品信息：碟子，一种盛食品或调味品的小而浅的器皿，比盘子小，多为圆形，也有其他的形状，如椭圆形、长方形等。', '69.00', '原色', '150123456789','474','1');
-INSERT INTO `DECA_laptop` VALUES ('6', '1', '17/SS灯具设计新品', 'Vandmand简洁小吊灯','产品信息：吊装在室内天花板上的高级装饰用照明灯。吊灯无论是以电线或以铁支垂吊，都不能吊得太矮，阻碍人正常的视线或令人觉得刺眼。以饭厅的吊灯为例，理想的高度是要在饭桌上形成一池灯光，但又不会阻碍桌上众人互望的视线。现时吊灯吊支已装上弹簧或高度调节器，可适合不同高度的楼底和需要性。', '69.00', '原色', '150123456789','373','1');
-INSERT INTO `DECA_laptop` VALUES ('7', '2', '17/SS桌椅新品设计', 'FIN-95懒人小方椅','产品信息：椅子是一种有靠背、有的还有扶手的坐具。古代席地而坐，原没有椅子，“椅”本是木名。《诗经》有“其桐其椅”，“椅”即“梓”，是一种树木的名称。', '399.00', '原色', '150123456789','1188','1');
-INSERT INTO `DECA_laptop` VALUES ('8', '1', '17/SS灯具设计新品', '橙色吊灯','产品信息：吊灯无论是以电线或以铁支垂吊，都不能吊得太矮，阻碍人正常的视线或令人觉得刺眼。以饭厅的吊灯为例，理想的高度是要在饭桌上形成一池灯光，但又不会阻碍桌上众人互望的视线。现时吊灯吊支已装上弹簧或高度调节器，可适合不同高度的楼底和需要性。', '189.00', '原色', '150123456789','1793','1');
+INSERT INTO `DECA_laptop` VALUES ('1', '1', '17/SS灯具设计新品', '圆形玻璃灯','玻璃灯工以玻璃管为基材，在专用的喷灯火焰上进行局部加热后，利用其热塑性和热熔性进行弯、吹、按、焊等加工成型的技术。是玻璃仪器和玻璃制品如玻璃温度计、保温瓶、灯泡、注射器、安瓿、管制瓶、电真空器件等生产中二次热加工的成型手段。', '169.00', '原色', '150123456789','694','1','images/product_details/1/1_1.jpg');
+INSERT INTO `DECA_laptop` VALUES ('2', '2', '17/SS桌椅新品设计', 'Tapani table','桌子是一种常用家具，上有平面，下有支柱。可以在上面放东西、做事情、吃饭、写字、工作等。有光滑平板，由腿和其它支撑物固定起来的家具，在语文中亦可作名词。为了迎合大众需求，桌子的类型丰富多样。桌子按需求可以分为很多类别，比如办公桌、餐桌、课桌、电脑桌、讲桌等。', '399.00', '原色', '150123456789','242','1','images/product_details/2/2_1.jpg');
+INSERT INTO `DECA_laptop` VALUES ('3', '2', '17/SS桌椅新品设计', 'Stakk小方椅','椅子是一种有靠背、有的还有扶手的坐具。古代席地而坐，原没有椅子，“椅”本是木名。《诗经》有“其桐其椅”，“椅”即“梓”，是一种树木的名称。', '99.00', '原色', '150123456789','252','1','images/product_details/3/3_1.jpg');
+INSERT INTO `DECA_laptop` VALUES ('4', '1', '17/SS灯具设计新品', 'Pendant lamp','吊灯无论是以电线或以铁支垂吊，都不能吊得太矮，阻碍人正常的视线或令人觉得刺眼。以饭厅的吊灯为例，理想的高度是要在饭桌上形成一池灯光，但又不会阻碍桌上众人互望的视线。现时吊灯吊支已装上弹簧或高度调节器，可适合不同高度的楼底和需要性。', '69.00', '原色', '150123456789','256','1','images/product_details/4/4_1.jpg');
+INSERT INTO `DECA_laptop` VALUES ('5', '3', '16/FW全系家居展示', '木制菜碟小套件','碟子，一种盛食品或调味品的小而浅的器皿，比盘子小，多为圆形，也有其他的形状，如椭圆形、长方形等。', '69.00', '原色', '150123456789','474','1','images/product_details/5/5_1.jpg');
+INSERT INTO `DECA_laptop` VALUES ('6', '1', '17/SS灯具设计新品', 'Vandmand简洁小吊灯','吊装在室内天花板上的高级装饰用照明灯。吊灯无论是以电线或以铁支垂吊，都不能吊得太矮，阻碍人正常的视线或令人觉得刺眼。以饭厅的吊灯为例，理想的高度是要在饭桌上形成一池灯光，但又不会阻碍桌上众人互望的视线。现时吊灯吊支已装上弹簧或高度调节器，可适合不同高度的楼底和需要性。', '69.00', '原色', '150123456789','373','1','images/product_details/6/6_1.jpg');
+INSERT INTO `DECA_laptop` VALUES ('7', '2', '17/SS桌椅新品设计', 'FIN-95懒人小方椅','椅子是一种有靠背、有的还有扶手的坐具。古代席地而坐，原没有椅子，“椅”本是木名。《诗经》有“其桐其椅”，“椅”即“梓”，是一种树木的名称。', '399.00', '原色', '150123456789','1188','1','images/product_details/7/7_1.jpg');
+INSERT INTO `DECA_laptop` VALUES ('8', '1', '17/SS灯具设计新品', '橙色吊灯','吊灯无论是以电线或以铁支垂吊，都不能吊得太矮，阻碍人正常的视线或令人觉得刺眼。以饭厅的吊灯为例，理想的高度是要在饭桌上形成一池灯光，但又不会阻碍桌上众人互望的视线。现时吊灯吊支已装上弹簧或高度调节器，可适合不同高度的楼底和需要性。', '189.00', '原色', '150123456789','1793','1','images/product_details/8/8_1.jpg');
 
 
 
