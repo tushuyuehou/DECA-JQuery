@@ -2950,3 +2950,6 @@ button.mfp-close:hover{
 .register-shoplayer .card{
     height: 385px;
 }
+.register-shoplayer .wrapper{
+    margin: -193px 0 0 -180px;
+}

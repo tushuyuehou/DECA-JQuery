@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/index.css">
+    <style>
+        .un-dot-nav li:not(:first-of-type):not(:last-of-type){
+            display:none;
+        }
+    </style>
 </head>
 <body>
     <!--1.econav-->
@@ -40,10 +45,10 @@
                 <div class="ecoxiutwap">
                     <div class="navbar-right met-nav-login">
                         <div class="vertical-align-middle margin-right-10">
-                            <a href="register.html" class="btn btn-squared btn-success">注册</a>
+                            <a href="javascript:;" class="btn btn-squared btn-success" id="register">注册</a>
                         </div>
                         <div class="vertical-align-middle">
-                            <a href="login.html" class="btn btn-squared btn-primary btn-outline">登录</a>
+                            <a href="javascript:;" class="btn btn-squared btn-primary btn-outline" id="login">登录</a>
                         </div>
                     </div>
                 </div>
@@ -68,7 +73,7 @@
                                         <a href="index.html" title="网站首页">网站首页</a>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="about/show.html" title="关于">
+                                        <a href="javascript:;" title="关于">
                                             关于
                                             <button type="button" class="btn expander glyphicon glyphicon-plus">
                                                 <!--<i class="icon glyphicon glyphicon-plus"></i>-->
@@ -76,10 +81,10 @@
                                         </a>
                                         <ul class="submenu">
                                             <li>
-                                                <a href="about/show.html" title="关于我们">关于我们</a>
+                                                <a href="about.html" title="关于我们">关于我们</a>
                                             </li>
                                             <li>
-                                                <a href="about/show.html" title="联系">联系</a>
+                                                <a href="about_contact.html" title="联系">联系</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -87,44 +92,44 @@
                                         <a href="products.html" title="产品商城">产品商城</a>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="news/" title="博客">
+                                        <a href="javascript:;" title="博客">
                                             博客
                                             <button type="button" class="btn expander glyphicon glyphicon-plus"></button>
                                         </a>
                                         <ul class="submenu">
                                             <li>
-                                                <a href="news/" title="全部">全部</a>
+                                                <a href="news.html" title="全部">全部</a>
                                             </li>
                                             <li>
-                                                <a href="news/" title="公司动态">公司动态</a>
+                                                <a href="news.html" title="公司动态">公司动态</a>
                                             </li>
                                             <li>
-                                                <a href="news/" title="业界资讯">业界资讯</a>
+                                                <a href="news.html" title="业界资讯">业界资讯</a>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="series/" title="专题系列">
+                                        <a href="javascript:;" title="专题系列">
                                             专题系列
                                             <button type="button" class="btn expander glyphicon glyphicon-plus"></button>
                                         </a>
                                         <ul class="submenu">
                                             <li>
-                                                <a href="series/" title="全部">全部</a>
+                                                <a href="series.html" title="全部">全部</a>
                                             </li>
                                             <li>
-                                                <a href="series/" title="17/SS灯具设计新品">17/SS灯具设计新品</a>
+                                                <a href="series_details.html" title="17/SS灯具设计新品">17/SS灯具设计新品</a>
                                             </li>
                                             <li>
-                                                <a href="series/" title="17/SS桌椅新品设计">17/SS桌椅新品设计</a>
+                                                <a href="series_details.html" title="17/SS桌椅新品设计">17/SS桌椅新品设计</a>
                                             </li>
                                             <li>
-                                                <a href="series/" title="16/FW全系家居展示">16/FW全系家居展示</a>
+                                                <a href="series_details.html" title="16/FW全系家居展示">16/FW全系家居展示</a>
                                             </li>
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="about/show" title="联系">联系</a>
+                                        <a href="about_contact.html" title="联系">联系</a>
                                     </li>
                                 </ul>
                             </div>
@@ -158,7 +163,49 @@
                         <span class="un-dot un-dot-a glyphicon glyphicon-menu-up"></span>
                     </li>
                     <li>
-                        <span class="un-dot un-dot-a glyphicon glyphicon-menu-down" data-scroll="ecofootbg"></span>
+                        <span data-toggle="tooltip" data-placement="left" data-trigger="hover" class="un-dot ecocase" data-scroll="#case" data-original-title="产品展示">•</span>
+                        <div class="popover" role="tooltip">
+                            <div class="arrow"></div>
+                            <div class="popover-content">产品展示</div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-toggle="tooltip" data-placement="left" data-trigger="hover" class="un-dot ecovideo" data-scroll="#video" data-original-title="宣传视频">•</span>
+                        <div class="popover" role="tooltip">
+                            <div class="arrow"></div>
+                            <div class="popover-content">宣传视频</div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-toggle="tooltip" data-placement="left" data-trigger="hover" class="un-dot ecoabout" data-scroll="#about" data-original-title="关于我们">•</span>
+                        <div class="popover" role="tooltip">
+                            <div class="arrow"></div>
+                            <div class="popover-content">关于我们</div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-toggle="tooltip" data-placement="left" data-trigger="hover" class="un-dot ecoeconum" data-scroll="#econum" data-original-title="数据统计">•</span>
+                        <div class="popover" role="tooltip">
+                            <div class="arrow"></div>
+                            <div class="popover-content">数据统计</div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-toggle="tooltip" data-placement="left" data-trigger="hover" class="un-dot econews" data-scroll="#news" data-original-title="博客文章">•</span>
+                        <div class="popover" role="tooltip">
+                            <div class="arrow"></div>
+                            <div class="popover-content">博客文章</div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-toggle="tooltip" data-placement="left" data-trigger="hover" class="un-dot ecobottomcontact" data-scroll="#bottomcontact" data-original-title="联系我们">•</span>
+                        <div class="popover" role="tooltip">
+                            <div class="arrow"></div>
+                            <div class="popover-content">联系我们</div>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="un-dot un-dot-a glyphicon glyphicon-menu-down" data-scroll=".ecofootbg"></span>
                     </li>
                 </ul>
             </div>
@@ -337,8 +384,6 @@
     </button>
 
     <script src="js/jquery-3.2.1.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/bootlint.js"></script>
     <script src="js/index.js"></script>
 </body>
 </html>
