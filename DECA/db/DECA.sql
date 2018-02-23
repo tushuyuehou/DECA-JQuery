@@ -43,6 +43,7 @@ INSERT INTO DECA_user VALUES ('1', 'dingding', '123456', 'ding@qq.com', '1351101
 INSERT INTO DECA_user VALUES ('2', 'dangdang', '123456', 'dang@qq.com', '13501234568', '1','default.png');
 INSERT INTO DECA_user VALUES ('3', 'doudou', '123456', 'dou@qq.com', '13501234569', '1','default.png');
 INSERT INTO DECA_user VALUES ('4', 'yaya', '123456', 'ya@qq.com', '13501234560', '0','default.png');
+INSERT INTO DECA_user VALUES ('5', 'test', '123456', 'test@test.com', '13501223560', '0','default.png');
 
 
 -- ----------------------------
